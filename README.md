@@ -1,29 +1,47 @@
 # Data Sculptor
+<div align="center">
+  <p>
+    <a href="#"><img src="./img/icon.ico" height="150px" alt="logo" /></a>
+  </p>
+</div>
 
-CLI backend for batch file renaming by masks and XLSX to CSV conversion.
+**Read this in other languages / Читайте на других языках**
+- **[English](README.md)**
+- [Русский](README.ru.md)
+
+Convert unstructured source data in files with one click
+[v] Mass renaming of sample files using dates
+[v] Mass conversion of xlsx->csv files with choice of encoding and separator
+[v] Mass checking of csv, xlsx file structure
+[v] Massive change in the structure of xlsx and csv files with the ability to select specific files from the list
 
 ## Install
 
-Install optional XLSX editor libraries manually:
+Download the latest release for Windows from the [releases page](https://github.com/AndreyMospanov/Data_Sculptor/releases).
+
+To use Python:
+Install libraries:
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
-
-If `openpyxl` is missing, the GUI still starts, but the `XLSX editor` tab will ask you to run this command manually.
-
-## Desktop GUI
-
-Run the desktop application:
+Start the GUI:
 
 ```powershell
 python -m core.gui
 ```
-
-On Windows, you can also start [data_sculptor_gui.pyw](data_sculptor_gui.pyw) by double-clicking it.
+or double click [data_sculptor_gui.pyw](data_sculptor_gui.pyw) to start the GUI and start work.
 If double-clicking `.pyw` does not open anything, run [start_data_sculptor_gui.bat](start_data_sculptor_gui.bat) from the same folder to see startup errors in a console.
+Optionally be sure that You've installed the required libraries.
 
-The GUI has three tabs:
+## License
+
+This project is licensed under the MIT License - see the 
+[LICENSE](https://opensource.org/licenses/MIT) for details.
+
+## Desktop GUI
+
+The GUI has some tabs:
 
 - `Batch rename` previews and applies mask-based renames.
 - `XLSX to CSV` converts one workbook or a folder with many `.xlsx` files. It supports comma, semicolon, tab, or a custom one-character delimiter.
@@ -36,83 +54,4 @@ During XLSX conversion the GUI shows the current file, progress for the current 
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for a detailed architecture overview.
 
-The XLSX editor shows progress while checking, inserting, or deleting columns. After `Check columns`, rows are selected by default. Use `Select all files` to select or clear every row, or click any row to toggle `[x]` / `[ ]`; insert and delete operations apply only to selected rows. It uses `openpyxl` for safer workbook edits and changes selected workbooks in place, so make a backup before mass editing important files.
-
-CSV editor uses the standard `csv` module and rewrites files through a temporary file before replacing the original. The default `utf-8-sig` encoding writes a BOM so CSV files open correctly in Excel with Cyrillic text.
-
-## Batch Renaming
-
-Preview only:
-
-```powershell
-python -m core.cli "C:\path\to\files" --input "{name} {date:DD.MM.YYYY}.{ext}" --output "{date:YYYYMMDD}_{name}.{ext}"
-```
-
-Apply changes:
-
-```powershell
-python -m core.cli "C:\path\to\files" --input "{name} {date:DD.MM.YYYY}.{ext}" --output "{date:YYYYMMDD}_{name}.{ext}" --apply
-```
-
-## Masks
-
-Placeholders are written as `{field}` or `{field:FORMAT}`.
-
-Example input:
-
-```text
-{name} {date:DD.MM.YYYY}.{ext}
-```
-
-Example output:
-
-```text
-{date:YYYYMMDD}_{name}.{ext}
-```
-
-This converts `Report 31.05.2026.txt` to `20260531_Report.txt`.
-
-Supported date tokens: `DD`, `MM`, `YY`, `YYYY`.
-
-Useful options:
-
-- `--apply` renames files; without it the command only previews.
-- `--recursive` processes nested directories.
-- `--include-dirs` includes directories.
-- `--overwrite` allows replacing existing target files.
-
-## XLSX to CSV
-
-List workbook sheets:
-
-```powershell
-python -m core.xlsx_cli "C:\path\to\input.xlsx" --list-sheets
-```
-
-Convert the first sheet with comma delimiter:
-
-```powershell
-python -m core.xlsx_cli "C:\path\to\input.xlsx" "C:\path\to\output.csv"
-```
-
-Convert a selected sheet with semicolon delimiter:
-
-```powershell
-python -m core.xlsx_cli "C:\path\to\input.xlsx" "C:\path\to\output.csv" --sheet "Sheet1" --delimiter ";"
-```
-
-Convert every `.xlsx` file in a folder:
-
-```powershell
-python -m core.xlsx_cli "C:\path\to\xlsx-folder" "C:\path\to\csv-folder" --delimiter ";"
-```
-
-Convert nested folders too:
-
-```powershell
-python -m core.xlsx_cli "C:\path\to\xlsx-folder" "C:\path\to\csv-folder" --delimiter ";" --recursive
-```
-
-Tab delimiter can be passed as `--delimiter "\t"`.
-
-Excel dates are detected automatically when the XLSX cell has a date style. For example, Excel serial value `44953` is exported as `27.01.2023` instead of a raw number.
+The Application shows progress while checking, inserting, or deleting columns. It also has a status bar for all tabs, be sure to check if you think, that app is not responding or freeze.
