@@ -1,0 +1,60 @@
+('C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+ 'Sculptor\\Data Sculptor.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data Sculptor\\build\\Data '
+   'Sculptor\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data '
+   'Sculptor\\.venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data '
+   'Sculptor\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth__tkinter',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data '
+   'Sculptor\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py',
+   'PYSOURCE'),
+  ('data_sculptor_gui',
+   'C:\\Users\\Андрей\\Documents\\Работа не walk\\Data '
+   'Sculptor\\data_sculptor_gui.pyw',
+   'PYSOURCE')],
+ 'python314.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)
