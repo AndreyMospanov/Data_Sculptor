@@ -9,11 +9,13 @@
 - **[English](README.md)**
 - [Русский](README.ru.md)
 
+## Features
+
 Convert unstructured source data in files with one click
-[v] Mass renaming of sample files using dates
-[v] Mass conversion of xlsx->csv files with choice of encoding and separator
-[v] Mass checking of csv, xlsx file structure
-[v] Massive change in the structure of xlsx and csv files with the ability to select specific files from the list
+- Mass renaming of sample files using dates
+- Mass conversion of xlsx->csv files with choice of encoding and separator
+- Mass checking of csv, xlsx file structure
+- Massive change in the structure of xlsx and csv files with the ability to select specific files from the list
 
 ## Install
 
